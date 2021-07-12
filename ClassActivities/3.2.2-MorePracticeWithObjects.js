@@ -6,7 +6,9 @@ const obj = {
 }; 
 
 // what will the following lines print? 
-obj[key]; obj.key; obj["key"];
+obj[key]; 
+obj.key; 
+obj["key"];
 
 // create an object with at least four properties, each with a different data type // name one of the four properties "collection" and set its value to an Array or Object
 
