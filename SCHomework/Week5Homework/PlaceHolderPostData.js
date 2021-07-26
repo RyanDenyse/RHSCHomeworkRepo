@@ -607,7 +607,8 @@ const data = [
  console.log(userFivePosts);
 
 // then, create a list of title and body pairs
-const titleAndBody = data.map(post  => [post.title, post.body]);
+const titleAndBody = userFivePosts.map (post  => [post.title, post.body]);
 
 console.log(titleAndBody);
+
 

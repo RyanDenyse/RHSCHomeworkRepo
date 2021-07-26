@@ -1201,21 +1201,51 @@ const data = [
     }
   ]
 
-//   create a list of user 9's to-dos
-const userNineIncompleteTasks = data.filter(task => task.userId === 9 && task.completed != true);
 
-console.log(userNineIncompleteTasks);
+// Bonus Challenge - create an object that summarizes the incomplete tasks of users 3, 7, & 8
 
-// then find the number of user 9's incomplete tasks
+const userThreeTasks = data.filter(task => task.userId == 3);
 
-const userNineIncompleteTasksAmount = data.filter(function(task){
-    return task.userId === 9 && task.completed != true;
-}).length;
+const userSevenTasks = data.filter(task => task.userId == 7);
 
-console.log(userNineIncompleteTasksAmount);
+const userEightTasks = data.filter(task => task.userId == 8);
 
+const userThreeIncompleteTasks = data.filter(function(task){
+  return task.userId === 3 && task.completed != true;
+});
 
+const userSevenIncompleteTasks = data.filter(function(task){
+    return task.userId === 7 && task.completed != true;
+});
 
+const userEightIncompleteTasks = data.filter(function(task){
+    return task.userId === 8 && task.completed != true;
+});
+
+const titleThree = userThreeIncompleteTasks.map (post  => [post.title]);
+
+const titleSeven = userSevenIncompleteTasks.map (post  => [post.title]);
+
+const titleEight = userEightIncompleteTasks.map (post  => [post.title]);
+
+class userIncompleteTasks {
+    constructor(totalTasks, totalIncomplete, incompleteTasks) {
+        this.totalTasks = totalTasks;
+        this.totalIncomplete = totalIncomplete;
+        this.incompleteTasks = incompleteTasks;
+
+    }
+};
+
+const userThree = new userIncompleteTasks (userThreeTasks.length, userThreeIncompleteTasks.length, titleThree );
+
+const userSeven = new userIncompleteTasks (userSevenTasks.length, userSevenIncompleteTasks.length, titleSeven);
+
+const userEight = new userIncompleteTasks (userEightTasks.length, userEightIncompleteTasks.length, titleEight);
+
+console.log(userThree);
+console.log(userSeven);
+console.log(userEight);
 
 
 
